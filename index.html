@@ -1,0 +1,535 @@
+<!DOCTYPE html> 
+<html>
+<head>
+
+<style>
+.fondo{
+	
+	background:#09F;}
+
+
+</style>
+
+<meta charset="utf-8">
+
+<title>SERVICIO DE LABORATORIO</title>
+<link href="http://www.enguiaplus.com/app_moviles/slab_app/jquery-mobile/jquery.mobile-1.0.min.css" rel="stylesheet" type="text/css"/>
+
+
+<script src="http://www.enguiaplus.com/app_moviles/slab_app/jquery-mobile/jquery-1.6.4.min.js" type="text/javascript"></script>
+<script src="http://www.enguiaplus.com/app_moviles/slab_app/jquery-mobile/jquery.mobile-1.0.min.js" type="text/javascript"></script>
+<meta http-equiv="Expires" content="0" /> 
+<meta http-equiv="Pragma" content="no-cache" />
+
+<script type="text/javascript">
+   if(history.forward(1)){
+     location.replace( history.forward(1) );
+   }
+</script>
+</head> 
+<body> 
+
+<div data-role="page" id="page">
+	<div data-role="header" data-theme="e"  align="center">
+    <img src="img/logo.png" > </div>
+	<div data-role="content">	
+		<ul data-count-theme="e" data-role="listview" data-split-theme="e" data-theme="c" data-divider-theme="e">
+			<li><a href="#inicio">Iniciar sesi&oacute;n</a></li>
+            <li><a href="#registro">Registrarse como cliente</a></li>
+			
+		</ul>		
+	</div>
+	<div data-role="footer" data-theme="e">
+		<table width="300" border="0" align="center">
+		  <tr>
+		    <td><a href="#page"><img src="img/home.png" ></a></td>
+		    <td><span class="ui-btn-corner-bl"><a href="#inicio"><img src="img/sesion.png" alt="" ></a></span></td>
+		    <td><a href="#registro"><img src="img/registro.png" alt="" ></a></td>
+	      </tr>
+	  </table>
+		
+	</div>
+</div>
+
+<div data-role="page" id="inicio">
+	<div data-role="header" data-theme="e" align="center">
+    
+		<img src="img/logo.png" > 
+	</div>
+	<div data-role="content">	
+		
+      <form id="formulario" >
+      
+      			<label> Usuario </label>
+      			<input type="text" id="nombredeusuario" name="nombredeusuario">
+      
+      			<label> Password </label>
+     			<input type="password" id="clave" name="clave" >
+
+      			<input type="submit" value="Login" id="botonLogin">
+      
+	  </form>	
+         
+    </div>
+    
+    
+	<div data-role="footer" data-theme="e">
+	  <table width="300" border="0" align="center">
+	    <tr>
+	      <td><a href="#page"><img src="img/home.png" ></a></td>
+	      <td><span class="ui-btn-corner-bl"><a href="#inicio"><img src="img/sesion.png" alt="" ></a></span></td>
+	      <td><a href="#registro"><img src="img/registro.png" alt="" ></a></td>
+        </tr>
+      </table>
+
+	</div>
+</div>
+
+<script>
+function gup( name ){
+	var r
+	var regexS = "[\\?&]"+name+"=([^&#]*)";
+	var regex = new RegExp ( regexS );
+	var tmpURL = window.location.href;
+	var results = regex.exec( tmpURL );
+	if( results == null )
+		r="";
+	else{
+		r=results[1];
+		document.location.href="#sol?x="+r;
+		}
+}
+
+</script>
+
+
+<script>
+function gup2( name ){
+	var r
+	var regexS = "[\\?&]"+name+"=([^&#]*)";
+	var regex = new RegExp ( regexS );
+	var tmpURL = window.location.href;
+	var results = regex.exec( tmpURL );
+	if( results == null )
+		r="";
+	else{
+		r=results[1];
+		document.location.href="#ult_citas?x="+r;
+		}
+}
+
+</script>
+
+<div data-role="page" id="home">
+
+	<div align="center" data-role="header" data-theme="e"><img src="img/logo.png"  > <br>
+    <h2>MI CUENTA</h2></div>
+	<div data-role="content">	
+		
+        <ul data-count-theme="e" data-role="listview" data-split-theme="e" data-theme="e" data-divider-theme="e">
+			<li><a href='javascript:;' onClick="gup('x')" >Solicitar cita</a></li>
+            <li><a  href='javascript:;' onClick="gup2('x')">Mis &Uacute;ltimas Solicitudes de CITAS</a></li>
+			<li><a href="#page">Cerrar Sesi&oacute;n</a></li>
+		</ul>
+        
+        
+        
+        		
+	</div>
+    
+    <div data-role="footer" data-theme="e">
+	  <table width="300" border="0" align="center">
+	    <tr>
+	      <td><a href="#home"><img src="img/micuenta.png" width="70" height="21"></a></td>
+	      <td><a href='javascript:;' onClick="gup('x')"><img src="img/stax.png" width="70" height="21" ></a></td>
+	      <td><a href="href='javascript:;' onClick="gup2('x')""><img src="img/ults.png" width="101" height="21"></a></td>
+	      <td><a href="#page"><img src="img/cerrars.png" alt="" width="91" height="21" ></a></td>
+        </tr>
+      </table>
+
+	</div>
+    
+</div>
+    
+   <script language="Javascript"> 
+
+var muestra;
+function makeArray(n){this.length = n;
+for (i=1;i<=n;i++){this[i]=0;}
+return this;}
+
+function Muestrafecha() {
+//arreglo de los meses
+var meses = new makeArray(12);
+meses[0]  = "Enero";
+meses[1]  = "Febrero";
+meses[2]  = "Marzo";
+meses[3]  = "Abril";
+meses[4]  = "Mayo";
+meses[5]  = "Junio";
+meses[6]  = "Julio";
+meses[7]  = "Agosto";
+meses[8]  = "Septiembre";
+meses[9]  = "Octubre";
+meses[10] = "Noviembre";
+meses[11] = "Deciembre";
+
+//arreglo de los dias
+var dias_de_la_semana = new makeArray(7);
+dias_de_la_semana[0]  = "Domingo";
+dias_de_la_semana[1]  = "Lunes";
+dias_de_la_semana[2]  = "Martes";
+dias_de_la_semana[3]  = "Miércoles";
+dias_de_la_semana[4]  = "Jueves";
+dias_de_la_semana[5]  = "Viernes";
+dias_de_la_semana[6]  = "Sábado";
+
+var today = new Date();
+var day   = today.getDate();
+var month = today.getMonth();
+var year  = today.getYear();
+var dia = today.getDay();
+var hora = today.getHours() 
+var minuto = today.getMinutes() 
+
+if (year < 1000) {year += 1900; }
+
+// mostrar la fecha 
+
+return( dias_de_la_semana[dia] + ", " + day + " de " + meses[month] + " del " + year+" \n\nHORA: "+hora+":"+minuto);
+}
+
+
+</script>
+ 
+<div data-role="page" id="sol">
+	<div align="center" data-role="header" data-theme="e"><img src="img/logo.png"  > <br>
+    <h2>SOLICITAR CITA</h2></div>
+	<div data-role="content">	
+				 <form id="fsol" >
+         			
+                
+                <script type="text/javascript" language="JavaScript">
+document.write (Muestrafecha());
+</script><br>
+               <strong><BR>
+                <label> TURNO:</label>
+                </strong>
+           
+                <select name="turn"  id="turn">
+                <option value=""> -- SELECCIONE --</option>
+                <option value="M"> -- ATENCIÓN EN LA MAÑANA --</option>
+                <option value="T"> -- ATENCIÓN EN LA TARDE --</option>
+                </select>
+                
+                <strong>
+                <label> Fecha de solicitud: &nbsp; <small>Ejemplo:xx/xx/xxxx</small></label>
+                </strong>
+<input type="text" id="fecha" name="fecha" >
+                
+               
+                
+                
+
+      			<input type="submit" value="SOLICITAR CITA " id="botonrLogin">
+      
+    		</form>			
+	</div>
+<div data-role="footer" data-theme="e">
+	  <table width="300" border="0" align="center">
+	    <tr>
+	      <td><a href="#home"><img src="img/micuenta.png" width="70" height="21"></a></td>
+	      <td><a href='javascript:;' onClick="gup('x')"><img src="img/stax.png" width="70" height="21" ></a></td>
+	      <td><a href='javascript:;' onClick="gup2('x')"><img src="img/ults.png" width="101" height="21"></a></td>
+	      <td><a href="#page"><img src="img/cerrars.png" alt="" width="91" height="21" ></a></td>
+        </tr>
+      </table>
+
+  </div>
+</div>
+    
+   
+   
+   <script>
+
+$('#fsol').submit(function() { 
+	
+	 
+	// recolecta los valores que inserto el usuario
+	var dturn = $("#turn").val()
+	var dfecha = $("#fecha").val()
+	
+	
+	
+	function gup( name ){
+	var r
+	var regexS = "[\\?&]"+name+"=([^&#]*)";
+	var regex = new RegExp ( regexS );
+	var tmpURL = window.location.href;
+	var results = regex.exec( tmpURL );
+	if( results == null )
+		return "";
+	else return results[1];
+}
+	
+	var dci= gup('x');
+	
+  	archivoValidacion = "http://www.enguiaplus.com/app_moviles/slab_app/vsolicitar.php?jsoncallback=?"
+
+	$.getJSON( archivoValidacion, { turn:dturn ,fecha:dfecha,ci:dci})
+	.done(function(respuestaServer) {
+		
+		alert(respuestaServer.mensaje + "\nGenerado en: " + respuestaServer.hora + "\n" +respuestaServer.generador)
+		
+		if(respuestaServer.validacion == "ok"){
+		  
+		 	/// si la validacion es correcta, muestra la pantalla "home"
+			$.mobile.changePage("#home")
+		  
+		}else{
+		  
+		  /// ejecutar una conducta cuando la validacion falla
+		}
+  
+	})
+	return false;
+})
+	
+</script>
+   
+  
+<div data-role="page" id="ult_citas">
+	<div align="center" data-role="header" data-theme="e"><img src="img/logo.png"  > <br>
+    <h2>ÚLTIMAS CITAS</h2></div>
+	<div data-role="content">	
+		<form id="fmsol" >
+         			
+                
+                <script type="text/javascript" language="JavaScript">
+document.write (Muestrafecha());
+
+</script><br>
+               
+               <!-- <strong>
+                <label> C.I del Cliente: </label>
+                </strong> -->
+				<input   type="hidden" id="cic" name="cic"  >
+				<input type="submit" value="CONSULTAR ULTIMAS SOLICITUDES DE CITAS" id="botonrLogin">
+      
+    		</form>			
+	</div>
+<div data-role="footer" data-theme="e">
+	  <table width="300" border="0" align="center">
+	    <tr>
+	      <td><a href="#home"><img src="img/micuenta.png" width="70" height="21"></a></td>
+	      <td><a href='javascript:;' onClick="gup('x')"><img src="img/stax.png" width="70" height="21" ></a></td>
+	      <td><a href='javascript:;' onClick="gup2('x')"><img src="img/ults.png" width="101" height="21"></a></td>
+	      <td><a href="#page"><img src="img/cerrars.png" alt="" width="91" height="21" ></a></td>
+        </tr>
+      </table>
+
+  </div>
+    </div>
+    
+    
+     <script>
+
+
+$('#fmsol').submit(function() { 
+	function gup2( name ){
+	var r
+	var regexS = "[\\?&]"+name+"=([^&#]*)";
+	var regex = new RegExp ( regexS );
+	var tmpURL = window.location.href;
+	var results = regex.exec( tmpURL );
+	if( results == null )
+		return "";
+	else return results[1];
+}
+	
+	
+	
+	var dci= gup2('x');
+	
+	
+  	archivoValidacion = "http://www.enguiaplus.com/app_moviles/slab_app/vusol.php?jsoncallback=?"
+
+	$.getJSON( archivoValidacion, {ci:dci})
+	.done(function(respuestaServer) {
+		
+		alert(respuestaServer.mensaje + "\nGenerado en: " + respuestaServer.hora + "\n" +respuestaServer.generador)
+		
+		if(respuestaServer.validacion == "ok"){
+		  
+		 	/// si la validacion es correcta, muestra la pantalla "home"
+			$.mobile.changePage("#ult_citas?x="+dci)
+			
+		  
+		}else{
+		  
+		  /// ejecutar una conducta cuando la validacion falla
+		}
+  
+	})
+	return false;
+})
+	
+</script>
+   
+    
+    
+    
+    
+    
+    
+    
+    <script>
+
+$('#formulario').submit(function() { 
+	
+	 
+	// recolecta los valores que inserto el usuario
+var datosUsuario = $("#nombredeusuario").val()
+	var datosPassword = $("#clave").val()
+  	
+	archivoValidacion ="http://www.enguiaplus.com/app_moviles/slab_app/validacion_de_datos.php?jsoncallback=?"
+
+	$.getJSON( archivoValidacion, { usuario:datosUsuario ,password:datosPassword})
+	.done(function(respuestaServer) {
+		
+		alert(respuestaServer.mensaje + "\nGenerado en: " + respuestaServer.hora + "\n" +respuestaServer.generador)
+		
+		if(respuestaServer.validacion == "ok"){
+		  
+		 	/// si la validacion es correcta, muestra la pantalla "home"
+			document.getElementById("nombredeusuario").value="";
+			document.getElementById("clave").value="";
+			$.mobile.changePage("#home?x="+respuestaServer.ced)
+
+		  
+		}else{
+		
+		  /// ejecutar una conducta cuando la validacion falla
+		}
+  
+	})
+	return false;
+})
+	
+</script>
+
+
+
+<div data-role="page" id="registro">
+	<div data-role="header" data-theme="e">
+		
+		<h1 align="center"><img src="img/logo.png"  ></h1>
+	</div>
+	<div data-role="content">	
+		 <form id="freg" >
+      
+      			<label> <strong>C.I: </strong></label>
+      			<input type="text" id="ci" name="ci">
+      			
+                <strong>
+                <label> Descripción : </label>
+                </strong>
+<input type="text" id="des" name="des">
+                
+                <label> <strong>Representante:</strong></label>
+      			<input type="text" id="rep" name="rep">
+                
+                <strong>
+                <label> Direcci&oacute;n: </label>
+                </strong>
+<input type="text" id="dir" name="dir">
+                
+                <strong>
+                <label> Tel&eacute;fono:</label>
+                </strong>
+                <label> </label>
+      			<input type="text" id="tel1" name="tel1">
+                
+                
+                <strong>
+                <label> Tel&eacute;fono 2:</label>
+                </strong>
+                <label> </label>
+      			<input type="text" id="tel2" name="tel2">
+                
+                
+                <strong>
+                <label> Email: </label>
+                </strong>
+<input name="email" type="text" id="email" data-theme="b">
+                
+      			<label> <strong>Password:</strong></label>
+     			<input type="password" id="pass" name="pass" >
+                
+                <label> <strong>Confirmaci&oacute;n de Password</strong></label>
+                <strong>:</strong>
+<input type="password" id="pass2" name="pass2" >
+
+      			<input type="submit" value="REGISTRAR" id="botonrLogin">
+      
+    		</form>		
+	</div>
+	<div data-role="footer" data-theme="e">
+		<table width="300" border="0" align="center">
+		  <tr>
+		    <td align="center" valign="middle"><a href="#page"><img src="img/home.png" width="53" height="21" ></a></td>
+		    <td align="center" valign="middle"><span class="ui-btn-corner-bl"><a href="#inicio"><img src="img/sesion.png" alt="" width="53" height="21" ></a></span></td>
+		    <td align="center" valign="middle"><a href="#registro"><img src="img/registro.png" alt="" width="53" height="21" ></a></td>
+	      </tr>
+	  </table>
+		
+	</div>
+</div>
+
+ <script>
+
+$('#freg').submit(function() { 
+	
+	 
+	// recolecta los valores que inserto el usuario
+	var dci = $("#ci").val()
+	var ddes = $("#des").val()
+	var drep = $("#rep").val()
+	var ddir = $("#dir").val()
+	var dtel1 = $("#tel1").val()
+	var dtel2 = $("#tel2").val()
+	var demail = $("#email").val()
+	var dpass = $("#pass").val()
+	var dpass2 = $("#pass2").val()
+	
+  	archivoValidacion = "http://www.enguiaplus.com/app_moviles/slab_app/vregistro.php?jsoncallback=?"
+
+	$.getJSON( archivoValidacion, { ci:dci ,des:ddes,rep:drep,dir:ddir,tel1:dtel1,tel2:dtel2,email:demail,pass:dpass,pass2:dpass2})
+	.done(function(respuestaServer) {
+		
+		alert(respuestaServer.mensaje + "\nGenerado en: " + respuestaServer.hora + "\n" +respuestaServer.generador)
+		
+		if(respuestaServer.validacion == "ok"){
+		  
+		 	/// si la validacion es correcta, muestra la pantalla "home"
+			$.mobile.changePage("#inicio")
+		  
+		}else{
+		  
+		  /// ejecutar una conducta cuando la validacion falla
+		}
+  
+	})
+	return false;
+})
+	
+</script>
+
+
+
+
+
+
+
+</body>
+</html>

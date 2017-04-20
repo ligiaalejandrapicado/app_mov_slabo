@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<widget xmlns   = "http://www.w3.org/ns/widgets"
+    xmlns:gap   = "http://phonegap.com/ns/1.0"
+    id          = "com.phonegap.example"
+    versionCode = "10"
+    version     = "1.0.0" >
+<name>APP LABORATORIO</name>
+
+<description>
+APP LABORATORIO DN
+</description>
+<!-- Added the following intents to support the removal of whitelist code from base cordova to a plugin -->
+<!-- Whitelist configuration. Refer to https://cordova.apache.org/docs/en/edge/guide_appdev_whitelist_index.md.html <plugin name="cordova-plugin-whitelist" version="1" />
+<allow-intent href="http://*/*"  launch-external="yes" />
+<allow-intent href="https://*/*" launch-external="yes"  />
+<allow-intent href="tel:*" launch-external="yes" />
+<allow-intent href="sms:*" launch-external="yes"  />
+<allow-intent href="mailto:*" launch-external="yes"  />
+<allow-intent href="geo:*" launch-external="yes"  />
+    
+<allow-navigation href="http://*/*" />
+<allow-navigation href="https://*/*" />
+<allow-navigation href="data:*" />
+<allow-navigation href="*" />
+    -->
+
+	
+	<plugin name="cordova-plugin-whitelist" spec="1" />    
+     <access origin="*" />
+    <allow-intent href="http://*/*" />
+    <allow-intent href="https://*/*" />
+    <allow-navigation href="data:*" />
+	
+	
+<preference name="permissions"                value="none"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+
+<icon src="icon.png" />
+    <icon src="res/icon/android/icon-36-ldpi.png"   gap:platform="android"    gap:qualifier="ldpi" />
+    <icon src="res/icon/android/icon-48-mdpi.png"   gap:platform="android"    gap:qualifier="mdpi" />
+    <icon src="res/icon/android/icon-72-hdpi.png"   gap:platform="android"    gap:qualifier="hdpi" />
+    <icon src="res/icon/android/icon-96-xhdpi.png"  gap:platform="android"    gap:qualifier="xhdpi" />
+
+
+<preference name="permissions"                value="none"/>
+<preference name="stay-in-webview"            value="false" />
+
+
+<author href="https://example.com" email="you@example.com">
+Your Name
+</author>
+
+</widget>
